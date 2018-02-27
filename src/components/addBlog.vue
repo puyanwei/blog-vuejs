@@ -20,6 +20,7 @@
         <select v-model="blog.author">
           <option v-for="author in authors">{{ author }}</option>
         </select>
+        <button @click.prevent="post">Add Blog</button>
       </form>
       <div id="preview">
         <h3>Preview Blog</h3>
