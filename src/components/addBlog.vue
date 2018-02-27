@@ -7,13 +7,13 @@
         <label>Blog Content:</label>
         <textarea v-model.lazy="blog.content"></textarea>
         <div id="checkboxes">
-          <label>One</label>
+          <label>Tracer</label>
           <input type="checkbox" value="Tracer" v-model="blog.categories"/>
-          <label>Two</label>
+          <label>Reaper</label>
           <input type="checkbox" value="Reaper" v-model="blog.categories"/>
-          <label>Three</label>
+          <label>Mercy</label>
           <input type="checkbox" value="Mercy" v-model="blog.categories"/>
-          <label>Four</label>
+          <label>Widowmaker</label>
           <input type="checkbox" value="Widowmaker" v-model="blog.categories"/>
         </div>
       </form>
@@ -22,6 +22,10 @@
         <p>Blog title {{ blog.title }}</p>
         <p>Blog content</p>
         <p>{{ blog.content }}</p>
+        <p>Blog Catergories</p>
+        <ul>
+          <li v-for="category in blog.categories">{{ category }}</li>
+        </ul>
       </div>
     </div>
 </template>
