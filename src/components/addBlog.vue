@@ -1,7 +1,7 @@
 <template>
     <div id="add-blog">
       <h2>Add a New Blog Post</h2>
-      <form>
+      <form v-if="!submitted">
         <label>Blog Title:</label>
         <input type="text" v-model.lazy="blog.title" required>
         <label>Blog Content:</label>
