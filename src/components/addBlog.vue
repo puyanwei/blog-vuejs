@@ -49,7 +49,19 @@ export default {
       authors: ["Chun Li", "Ryu", "Guile", "Ken"]
     };
   },
-  methods: {}
+  methods: {
+    post: function() {
+      this.$http
+        .post("http://jsonplaceholder.typicode.com/posts", {
+          title: this.blog.title,
+          body: this.blog.content,
+          userId: 1
+        })
+        .then(function(data) {
+          console.log(data);
+        });
+    }
+  }
 };
 </script>
 
