@@ -1,9 +1,10 @@
 <template>
   <div v-theme:column="'narrow'" id="show-blogs">
     <h1>All Blog Articles</h1>
+    <input type="text" v-model="search" placeholder="search posts">
     <div v-for="blog in blogs" class="single-blog">
       <h2 v-multicolor>{{ blog.title | to-uppercase }}</h2>
-      <article>{{ blog.body }}</article>
+      <article>{{ blog.body | snippet }}</article>
     </div>
   </div>
 </template>
@@ -12,10 +13,18 @@
 export default {
   data() {
     return {
-      blogs: []
+      blogs: [],
+      search: ""
     };
   },
   methods: {},
+  computed: {
+    filteredBlogs: function() {
+      return this.blogs.filter(blog => {
+        return boolean;
+      });
+    }
+  },
   created() {
     this.$http
       .get("http://jsonplaceholder.typicode.com/posts")
