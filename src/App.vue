@@ -1,6 +1,6 @@
 <template>
     <div>
-      <show-blogs></show-blogs>  
+      <show-blogs></show-blogs>
     </div>
 </template>
 
@@ -23,6 +23,6 @@ export default {
 <style>
 body {
   margin: 0;
-  font-family: "Nunito SemiBold";
+  font-family: "Nunito SemiBold", sans-serif;
 }
 </style>
