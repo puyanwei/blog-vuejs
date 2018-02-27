@@ -1,5 +1,5 @@
 <template>
-  <div id="show-blogs">
+  <div v-theme="'wide'" id="show-blogs">
     <h1>All Blog Articles</h1>
     <div v-for="blog in blogs" class="single-blog">
       <h2 v-multicolor>{{ blog.title }}</h2>

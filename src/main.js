@@ -15,6 +15,14 @@ Vue.directive("multicolor", {
   }
 });
 
+Vue.directive("theme", {
+  bind(el, binding, vnode) {
+    if (binding.value == "wide") {
+      el.style.maxWidth = "1200px";
+    }
+  }
+});
+
 new Vue({
   el: "#app",
   render: h => h(App) // renders the root component to the div id app
