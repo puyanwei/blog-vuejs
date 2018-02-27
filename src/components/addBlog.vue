@@ -22,6 +22,9 @@
         </select>
         <button @click.prevent="post">Add Blog</button>
       </form>
+      <div v-if="submitted">
+        <h3>Thanks for adding your post</h3>
+      </div>
       <div id="preview">
         <h3>Preview Blog</h3>
         <p>Blog title {{ blog.title }}</p>
@@ -46,7 +49,8 @@ export default {
         categories: [],
         author: ""
       },
-      authors: ["Chun Li", "Ryu", "Guile", "Ken"]
+      authors: ["Chun Li", "Ryu", "Guile", "Ken"],
+      submitted: false
     };
   },
   methods: {
@@ -59,6 +63,7 @@ export default {
         })
         .then(function(data) {
           console.log(data);
+          this.submitted = true;
         });
     }
   }
