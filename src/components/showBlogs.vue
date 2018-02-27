@@ -2,7 +2,7 @@
   <div v-theme:column="'narrow'" id="show-blogs">
     <h1>All Blog Articles</h1>
     <input type="text" v-model="search" placeholder="search posts">
-    <div v-for="blog in blogs" class="single-blog">
+    <div v-for="blog in filteredBlogs" class="single-blog">
       <h2 v-multicolor>{{ blog.title | to-uppercase }}</h2>
       <article>{{ blog.body | snippet }}</article>
     </div>
@@ -21,7 +21,7 @@ export default {
   computed: {
     filteredBlogs: function() {
       return this.blogs.filter(blog => {
-        return boolean;
+        return blog.title.match(this.search);
       });
     }
   },
