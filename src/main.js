@@ -4,6 +4,11 @@ import VueResource from "vue-resource";
 
 Vue.use(VueResource);
 
+// Custom filters
+Vue.filter("to-uppercase", function(value) {
+  return value.toUpperCase();
+});
+
 // Custom directives
 Vue.directive("multicolor", {
   bind(el, binding, vnode) {
