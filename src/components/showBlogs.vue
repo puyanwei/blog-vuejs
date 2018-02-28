@@ -33,7 +33,7 @@ export default {
       });
   },
   filters: {
-    "to-uppercase": function(value) {
+    toUppercase(value) {
       return value.toUpperCase();
     }
   }
