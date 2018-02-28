@@ -1,8 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue"; // component template imported
 import VueResource from "vue-resource";
+import VueRouter from "vue-router";
 
 Vue.use(VueResource);
+Vue.use(VueRouter);
+
+const router = new VueRouter({});
 
 // Custom filters
 
