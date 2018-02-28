@@ -36,6 +36,17 @@ export default {
     toUppercase(value) {
       return value.toUpperCase();
     }
+  },
+  directives: {
+    multicolor: {
+      bind(el, binding, vnode) {
+        el.style.color =
+          "#" +
+          Math.random()
+            .toString()
+            .slice(2, 8);
+      }
+    }
   }
 };
 </script>

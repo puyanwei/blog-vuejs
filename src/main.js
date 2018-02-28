@@ -10,17 +10,6 @@ Vue.filter("snippet", function(value) {
   return value.slice(0, 100) + "...";
 });
 
-// Custom directives
-Vue.directive("multicolor", {
-  bind(el, binding, vnode) {
-    el.style.color =
-      "#" +
-      Math.random()
-        .toString()
-        .slice(2, 8);
-  }
-});
-
 Vue.directive("theme", {
   bind(el, binding, vnode) {
     if (binding.value == "wide") {
