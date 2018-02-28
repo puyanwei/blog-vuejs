@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import searchMixin from "../mixins/searchMixin";
+
 export default {
   data() {
     return {
@@ -17,13 +19,7 @@ export default {
     };
   },
   methods: {},
-  computed: {
-    filteredBlogs: function() {
-      return this.blogs.filter(blog => {
-        return blog.title.match(this.search);
-      });
-    }
-  },
+  computed: {},
   created() {
     this.$http
       .get("http://jsonplaceholder.typicode.com/posts")
@@ -46,7 +42,8 @@ export default {
             .slice(2, 8);
       }
     }
-  }
+  },
+  mixins: [searchMixin]
 };
 </script>
 
