@@ -25,6 +25,10 @@ export default {
     this.$http
       .get("https://vue-js-blog-6bc85.firebaseio.com/posts.json")
       .then(function(data) {
+        return data.json(); // returns a promise object, not the data... yet!
+      })
+      .then(function(data) {
+        // now returns the data
         console.log(data);
       });
   },
