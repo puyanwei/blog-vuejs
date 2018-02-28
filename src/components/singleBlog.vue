@@ -1,8 +1,8 @@
 <template>
   <div id="singleBlog">
-    <h1></h1>
+    <h1>{{ blog.title }}</h1>
     <article>
-
+      {{ blog.body }}
     </article>
   </div>
 </template>
@@ -17,9 +17,9 @@ export default {
   },
   created() {
     this.$http
-      .get("http://jsonplaceholder.typicode.com/posts/" + "this.id")
+      .get("http://jsonplaceholder.typicode.com/posts/" + this.id)
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
         this.blog = data.body;
       });
   }
