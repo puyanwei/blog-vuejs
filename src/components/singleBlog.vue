@@ -1,9 +1,7 @@
 <template>
-  <div id="singleBlog">
+  <div id="single-blog">
     <h1>{{ blog.title }}</h1>
-    <article>
-      {{ blog.body }}
-    </article>
+    <article>{{ blog.body }}</article>
   </div>
 </template>
 
@@ -27,5 +25,8 @@ export default {
 </script>
 
 <style scoped>
-
+#single-blog {
+  max-width: 960px;
+  margin: 0 auto;
+}
 </style>
