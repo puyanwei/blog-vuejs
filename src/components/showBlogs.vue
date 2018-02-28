@@ -4,7 +4,7 @@
     <input type="text" v-model="search" placeholder="search posts">
     <div v-for="blog in filteredBlogs" class="single-blog">
       <router-link :to="'/blog/' + blog.id"><h2 v-multicolor>{{ blog.title | to-uppercase }}</h2></router-link>
-      <article>{{ blog.body | snippet }}</article>
+      <article>{{ blog.content | snippet }}</article>
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
           data[keyCode].id = keyCode;
           blogsArray.push(data[keyCode]);
         }
-        console.log(blogsArray);
+        this.blogs = blogsArray;
       });
   },
   filters: {
