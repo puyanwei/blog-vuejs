@@ -5,9 +5,6 @@ import VueResource from "vue-resource";
 Vue.use(VueResource);
 
 // Custom filters
-Vue.filter("to-uppercase", function(value) {
-  return value.toUpperCase();
-});
 
 Vue.filter("snippet", function(value) {
   return value.slice(0, 100) + "...";
