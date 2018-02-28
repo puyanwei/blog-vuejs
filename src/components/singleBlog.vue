@@ -15,10 +15,12 @@ export default {
   },
   created() {
     this.$http
-      .get("http://jsonplaceholder.typicode.com/posts/" + this.id)
+      .get("https://vue-js-blog-6bc85.firebaseio.com/posts" + this.id + ".json")
       .then(function(data) {
-        // console.log(data);
-        this.blog = data.body;
+        return data.json();
+      })
+      .then(function(data) {
+        this.blog = data;
       });
   }
 };
