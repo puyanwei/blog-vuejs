@@ -2,6 +2,10 @@
   <div id="single-blog">
     <h1>{{ blog.content }}</h1>
     <article>{{ blog.content }}</article>
+    <p>Author: {{ blog.author }}</p>
+    <ul>
+      <li v-for="category in blog.categories">{{ category }}</li>
+    </ul>
   </div>
 </template>
 
