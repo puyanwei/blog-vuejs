@@ -29,7 +29,12 @@ export default {
       })
       .then(function(data) {
         // now returns the data
-        console.log(data);
+        var blogsArray = [];
+        for (let keyCode in data) {
+          data[keyCode].id = keyCode;
+          blogsArray.push(data[keyCode]);
+        }
+        console.log(blogsArray);
       });
   },
   filters: {
