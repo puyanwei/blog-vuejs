@@ -1,7 +1,7 @@
 <template>
   <div id="single-blog">
-    <h1>{{ blog.title }}</h1>
-    <article>{{ blog.body }}</article>
+    <h1>{{ blog.content }}</h1>
+    <article>{{ blog.content }}</article>
   </div>
 </template>
 
@@ -15,7 +15,9 @@ export default {
   },
   created() {
     this.$http
-      .get("https://vue-js-blog-6bc85.firebaseio.com/posts" + this.id + ".json")
+      .get(
+        "https://vue-js-blog-6bc85.firebaseio.com/posts/" + this.id + ".json"
+      )
       .then(function(data) {
         return data.json();
       })
