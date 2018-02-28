@@ -23,9 +23,9 @@ export default {
   computed: {},
   created() {
     this.$http
-      .get("http://jsonplaceholder.typicode.com/posts")
+      .get("https://vue-js-blog-6bc85.firebaseio.com/posts.json")
       .then(function(data) {
-        this.blogs = data.body.slice(0, 10);
+        console.log(data);
       });
   },
   filters: {
